@@ -1,0 +1,73 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  background-color: darkcyan;
+  display: flex;
+  padding: 8px;
+}
+
+nav {
+  background-color: black;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  gap: 15px;
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: top left;
+  transition: opacity, transform, 1s;
+}
+
+.show {
+  transform: scale(1);
+  opacity: 1;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+nav a:hover {
+  color: black;
+}
+
+button {
+  z-index: 2;
+  background: none;
+  border: none;
+}
+
+button span {
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  display: block;
+  margin: 5px 0;
+  position: relative;
+
+  transition: opacity, transform, top, 0.5s;
+}
+
+button.open span:nth-child(1) {
+  top: 7px;
+  transform: rotate(45deg);
+}
+button.open span:nth-child(2) {
+  opacity: 0;
+}
+button.open span:nth-child(3) {
+  top: -7px;
+  transform: rotate(-45deg);
+}
